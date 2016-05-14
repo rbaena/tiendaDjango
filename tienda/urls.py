@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^$', 'proveedores.views.inicio', name='inicio'),
     url(r'^proveedores/nuevo/$','proveedores.views.proveedoresCreation' , name='proveedores_nuevo'),
     url(r'^proveedores/listado/$','proveedores.views.proveedoresList' , name='proveedores_listado'),
+    url(r'^proveedor/(?P<nit>\d+)$','proveedores.views.proveedoresDetail', name='proveedor_detalle'),
 )

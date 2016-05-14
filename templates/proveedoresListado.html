@@ -16,7 +16,7 @@
       <tbody class="list">
         {% for proveedor in Proveedores %}
         <tr>
-          <td><a href="/proveedores/{{proveedor.id}}">{{proveedor.nit}}</a> </td>
+          <td><a href={{ request.get_host }}/proveedor/{{proveedor.id}}>{{proveedor.nit}}</a> </td>
           <td>{{proveedor.razonS}}</td>
           <td>{{proveedor.dirp}}</td>
           <td>{{proveedor.tel}}</td>
