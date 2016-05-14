@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="large-12 columns">
+  	<h4><a href="/">Inicio</a> / Nuevo Producto</h4>
+    <div class=" panel large-12 columns">
+      <form  enctype='multipart/form-data' action='' method='POST'>
+      	<div class="row">
+        	<p style="text-align:center; color:gray;"> <em> Datos generales</em></p>
+        	<div class="  large-12 columns">
+          	{% csrf_token %}
+            {{ form.non_field_errors }}
+						<label > Nombre del Producto:
+            	{{ form.nomprod }}
+            </label>
+            {% if form.nomprod.errors %}
+            	{% for error in form.nomprod.errors %}
+              	<small class="error">
+                	{{ error|escape }}
+                </small>
+              {% endfor %}
+            {% endif %}
+          </div>
+					<div class="large-12 columns">
+	        	<label > Precio Unitario:
+	          	{{ form.precioU }}
+	          </label>
+	          {% if form.precioU.errors %}
+	          	{% for error in form.precioU.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        </div>
+				<div class="row">
+        	<div class="large-12 columns">
+						<label> Descripción del Producto:
+							{{ form.descrip }}
+						</label>
+						{% if form.descrip.errors %}
+							{% for error in form.descrip.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+				<div class="row">
+        	<div class="large-12 columns">
+						<label> Proveedor del Producto:
+							{{ form.nit_id }}
+						</label>
+						{% if form.nit_id.errors %}
+							{% for error in form.nit_id.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+				<br>
+    		<div class="large-12 columns">
+    			<input style="background-color:#7bac0f" class="button tiny " type='submit' value='Registrar Producto'/>
+				</div>
+  		</form>
+		</div>
+	</div>
+
+{% endblock %}

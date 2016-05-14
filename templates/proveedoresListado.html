@@ -16,10 +16,11 @@
       <tbody class="list">
         {% for proveedor in Proveedores %}
         <tr>
-          <td><a href={{ request.get_host }}/proveedor/{{proveedor.id}}>{{proveedor.nit}}</a> </td>
+          <td><a href={{ request.get_host }}/proveedor/{{proveedor.id}}>{{proveedor.nit}}</a></td>
           <td>{{proveedor.razonS}}</td>
           <td>{{proveedor.dirp}}</td>
           <td>{{proveedor.tel}}</td>
+          <td><a href={{ request.get_host }}/proveedor_e/{{proveedor.id}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
         </tr>
         {% endfor %}
       </tbody>

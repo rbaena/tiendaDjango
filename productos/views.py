@@ -30,19 +30,18 @@ def productosDetail(request, idProducto, template='productosDetalle.html'):
     Productos = get_object_or_404(productos, pk=idProducto)
     return render_to_response(template, {'Productos': Productos}, context_instance=RequestContext(request))
 
-def productosDelete(request, idProducto):
-    instance = get_object_or_404(productos, id=idProducto)
+def productosDelete(request, id_Producto):
+    instance = get_object_or_404(productos, idProducto=id_Producto)
     instance.delete()
-    messages.add_message(request, messages.SUCCESS, "El producto con id: %s fue Eliminado!" % idProducto)
-    return HttpResponseRedirect("/productos/list/")
+    Productos = productos.objects.all()
+    return render(request, 'productosListado.html', {'Productos': Productos})
 
-def productosUpdate(request, idProducto):
-    instance = get_object_or_404(productos, id=idProducto)
+def productosUpdate(request, id_Producto):
+    instance = get_object_or_404(productos, idProducto=id_Producto)
     form = productosForm(request.POST or None, instance=instance)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, "El producto fue actualizado!")
-            return HttpResponseRedirect("/productos/list/")
-
-    return render(request, 'form_productos.html', {'form': form})
+            Productos = productos.objects.all()
+            return render(request, 'productosListado.html', {'Productos': Productos})
+    return render(request, 'productosDetalle.html', {'form': form})

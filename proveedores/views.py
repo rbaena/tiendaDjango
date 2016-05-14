@@ -26,15 +26,15 @@ def proveedoresList(request):
     Proveedores = proveedores.objects.all()
     return render(request, 'proveedoresListado.html', {'Proveedores': Proveedores})
 
-def proveedoresDetail(request, nit, template='proveedoresDetalle.html'):
-    Proveedores = get_object_or_404(proveedores, pk=nit)
+def proveedoresDetail(request, id, template='proveedoresDetalle.html'):
+    Proveedores = get_object_or_404(proveedores, pk=id)
     return render_to_response(template, {'Proveedores': Proveedores}, context_instance=RequestContext(request))
 
 def proveedoresDelete(request, id_nit):
     instance = get_object_or_404(proveedores, id=id_nit)
     instance.delete()
-    messages.add_message(request, messages.SUCCESS, "El proveedor con nit: %s fue Eliminado!" % id)
-    return HttpResponseRedirect("/proveedores/list/")
+    Proveedores = proveedores.objects.all()
+    return render(request, 'proveedoresListado.html', {'Proveedores': Proveedores})
 
 def proveedoresUpdate(request, id_nit):
     instance = get_object_or_404(proveedores, id=id_nit)
@@ -42,7 +42,6 @@ def proveedoresUpdate(request, id_nit):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, "El proveedor fue actualizado!")
-            return HttpResponseRedirect("/proveedores/list/")
-
-    return render(request, 'form_proveedores.html', {'form': form})
+            Proveedores = proveedores.objects.all()
+            return render(request, 'proveedoresListado.html', {'Proveedores': Proveedores})
+    return render(request, 'proveedoresDetalle.html', {'form': form})

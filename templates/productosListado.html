@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> / Lista de Productos</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">IdProducto</th>
+          <th width="235">Nombre del Producto</th>
+          <th width="235">Precio Unitario</th>
+          <th width="235">Descripción del Producto</th>
+          <th width="235">Nit del Proveedor</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for producto in Productos %}
+        <tr>
+          <td><a href={{ request.get_host }}/producto/{{producto.idProducto}}>{{producto.idProducto}}</a></td>
+          <td>{{producto.nomprod}}</td>
+          <td>{{producto.precioU}}</td>
+          <td>{{producto.descrip}}</td>
+          <td>{{producto.nit_id}}</td>
+          <td><a href={{ request.get_host }}/producto_e/{{producto.idProducto}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}
