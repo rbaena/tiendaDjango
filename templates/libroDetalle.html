@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<br>
+<div class="large-8 columns">
+	<div class="row">
+		<h3>Detalle libro</h3>
+ 		<div class="large-6 small-6 columns">
+			<img style="position:realtive" src="{{MEDIA_URL}}{{libro.cover_url}}">
+		</div>
+
+		<div class=" panel large-6 small-6 columns">
+			<h4> <strong>{{libro.titulo}}</strong> </h4>
+			<p>Por <a href="">{{libro.autor}}</a> </p>
+			<p>Editorial <strong>{{libro.editorial}}</strong> </p>
+			<p>Fecha de publicación <strong>{{libro.fecha_publicacion}}</strong> </p>
+			<p> Area <a href="">#{{libro.area}}</a> </p>
+			<p> Facultad <a style="color:green;" href="">{{libro.get_facultad_display}}</a> </p>
+
+			{% if libro.disponible_fisico %}
+
+			<p style="color:red"> Puedes prestar este libro ! </p>
+
+				<a style="background-color:#F25E5C" class="button tiny "  href="{{libro.id}}/prestamo">Prestar</a>
+
+
+			{% else %}
+
+			<p style="color:red">Libro no disponible para prestamo, pero puedes descargar una copia. !</p>
+
+			<a style="background-color:#7bac0f" class="button tiny "  href="{{MEDIA_URL}}{{libro.digital_url}}">Descargar</a>
+
+			{% endif %}
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de Proveedores</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">Nit Proveedor</th>
+          <th width="235">Razón Social</th>
+          <th width="235">Dirección Proveedor</th>
+          <th width="235">Teléfono Proveedor</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for proveedor in Proveedores %}
+        <tr>
+          <td><a href="/proveedores/{{proveedor.id}}">{{proveedor.nit}}</a> </td>
+          <td>{{proveedor.razonS}}</td>
+          <td>{{proveedor.dirp}}</td>
+          <td>{{proveedor.tel}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock %}

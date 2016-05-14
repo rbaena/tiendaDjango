@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="large-12 columns">
+  	<h4><a href="/">Inicio</a> /Nuevo Proveedor</h4>
+    <div class=" panel large-12 columns">
+      <form  enctype='multipart/form-data' action='' method='POST'>
+      	<div class="row">
+        	<p style="text-align:center; color:gray;"> <em> Datos generales</em></p>
+        	<div class="  large-12 columns">
+          	{% csrf_token %}
+            {{ form.non_field_errors }}
+						<label > Razón Social:
+            	{{ form.razonS }}
+            </label>
+            {% if form.razonS.errors %}
+            	{% for error in form.razonS.errors %}
+              	<small class="error">
+                	{{ error|escape }}
+                </small>
+              {% endfor %}
+            {% endif %}
+          </div>
+					<div class="large-12 columns">
+	        	<label > Dirección Proveedor:
+	          	{{ form.dirp }}
+	          </label>
+	          {% if form.dirp.errors %}
+	          	{% for error in form.dirp.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        </div>
+				<div class="row">
+        	<div class="large-6 columns">
+						<label> Nit Proveedor:
+							{{ form.nit }}
+						</label>
+						{% if form.nit.errors %}
+							{% for error in form.nit.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+					</div>
+					<div class="large-6 columns">
+	        	<label > Teléfono Proveedor:
+	          	{{ form.tel }}
+	          </label>
+	          {% if form.tel.errors %}
+	          	{% for error in form.tel.errors %}
+	          		<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+				</div>
+				<br>
+    		<div class="large-12 columns">
+    			<input style="background-color:#7bac0f" class="button tiny " type='submit' value='Registrar Proveedor'/>
+				</div>
+  		</form>
+		</div>
+	</div>
+
+{% endblock %}

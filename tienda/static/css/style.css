@@ -1,0 +1,209 @@
+﻿body {
+    color: #7d7d7d;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #7d7d7d;
+}
+
+.line-border {
+    border-top: 1px solid #e1e1e1;
+    width: 100%;
+}
+
+.color-pink {
+    color: #f37074;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.blue-btn {
+    background-color: #6cceec;
+}
+
+
+    .blue-btn:hover {
+        background-color: #30B1D8;
+    }
+
+
+button, .button {
+    margin: 0px;
+}
+
+.headings {
+    margin-bottom: 50px;
+}
+
+#why {
+    padding: 40px;
+}
+
+.why-item {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    text-align: center;
+}
+
+    .why-item div {
+        font-size: 13px;
+    }
+
+    .why-item h4 {
+        color: #28304f;
+    }
+
+    .why-item .glyph-icon {
+        color: #28304f;
+    }
+
+.border-right {
+    border-right: 1px solid #e1e1e1;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+#testimonial {
+    width: 100%;
+    min-height: 260px;
+    background: url(../img/testi.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+}
+
+    #testimonial h6:before {
+        content: '- ';
+    }
+
+    #testimonial li div {
+        width: 70%;
+        margin: auto;
+    }
+
+#intro {
+    width: 100%;
+    min-height: 400px;
+    padding: 40px;
+    background: url(../img/intro.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#features {
+    width: 100%;
+    padding: 40px;
+    background-color: #ecf0f8;
+}
+
+.featured-item {
+    background-color: #fff;
+    width: 100%;
+    min-height: 160px;
+    padding: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+    .featured-item div {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .featured-item h6 {
+        font-weight: bold;
+    }
+
+#available {
+    padding: 40px;
+}
+
+
+
+#pricing {
+    padding: 40px;
+    padding-bottom: 80px;
+}
+
+.pricing-item {
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+.pricing-title {
+    border-radius: 50%;
+    margin: auto;
+    width: 130px;
+    height: 130px;
+    background: #6cceec;
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.pricing-table {
+    border: solid 1px #6cceec;
+    margin-top: -69px;
+    margin-bottom: 3.25rem;
+}
+
+#additional-info {
+    padding-top: 40px;
+    background-color: #f37074;
+    color: #fff;
+}
+
+    #additional-info h5 {
+        font-weight: bold;
+    }
+
+#sign-up {
+    padding: 17px 30px 30px 30px;
+    background-color: rgb(255,255,255);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+    #sign-up button {
+        width: 100%;
+    }
+
+
+
+.pricing-table .cta-button {
+    background-color: transparent;
+    text-align: center;
+    padding: 0px;
+    top: 21px;
+    position: relative;
+}
+
+.cta-button .button {
+    background: #6cceec;
+}
+
+footer {
+    padding: 40px;
+}

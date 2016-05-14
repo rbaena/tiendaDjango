@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Django</title>
+    <meta name="description" content="Free Zurb foundation one page template on foundationdeck">
+    <link href='{{STATIC_URL}}css/letra.css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/foundation.min.css" />
+    <script src="{{STATIC_URL}}js/vendor/modernizr.js"></script>
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/flaticon.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="intro">
+        <div class="row">
+            <div class="large-6 medium-6 columns">
+                <img src="{{STATIC_URL}}img/Nodes.png" alt="logo" />
+                <h3 class="color-white">Proveedores & Productos</h3>
+                <h6 class="color-white" style="line-height: 27px;">CRUD realizado en Django, Framework CSS Foundation y SGBD MySQL como práctica del curso de Diseño de Bases de Datos.
+                </h6>
+            </div>
+            <div class="large-6 medium-6 columns">
+                <div id="available">
+                    <center><img src="{{STATIC_URL}}img/descarga.jpg" alt="logo" /></center>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="features">
+        <div class="row">
+            <div class="large-3 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-three17"></div>
+                    <a href={{ request.get_host }}/proveedores/nuevo><h6 class="text-center">Proveedores</h6>
+                    <div>
+                        Registro de nuevos proveedores
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-cart5" style="color: rgb(23, 199, 85);"></div>
+                    <a href={{ request.get_host }}/productos/nuevo><h6 class="text-center">Productos</h6></a>
+                    <div>
+                        Registro de nuevos productos
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-clipboard11" style="color: rgb(8, 161, 181);"></div>
+                    <a href={{ request.get_host }}/proveedores/listado><h6 class="text-center">Lista de Proveedores</h6></a>
+                    <div>
+                        Lista, Edita y Actualiza Proveedores
+                    </div>
+                </div>
+            </div>
+            <div class="large-3 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-handbag1" style="color: rgb(255, 136, 0);"></div>
+                    <a href={{ request.get_host }}/productos/listado><h6 class="text-center">Lista de Productos</h6></a>
+                    <div>
+                        Lista, Edita y Actualiza Productos
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="why">
+        <div class="row">
+            <div class="large-12 columns">
+                {% block contenido %} {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="testimonial">
+        <div class="row">
+            <div class="large-12 columns">
+                <ul class="example-orbit-content" data-orbit>
+                    <li data-orbit-slide="headline-1">
+                        <div class="text-center">
+                            <h6 class="color-white">Rubén Baena</h6>
+                            <p class="color-white">Magister en Software Libre, Ingeniero de Sistemas, estudiante de Doctorado en Proyectos</p>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-2">
+                        <div>
+                            <h6 class="color-white">Repositorio</h6>
+                            <p class="color-white">Github</p>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-3">
+                        <div>
+                            <h6 class="color-white">Curso</h6>
+                            <p class="color-white">Diseño de Bases de Datos</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row text-center">
+            <div class="large-12 columns">
+                <h6 class="color-blue">2016 &copy;</h6>
+                <a href="http://github.com/rbaena" target="_blank"><img src="{{STATIC_URL}}img/github-logo-face.png" alt="logo" /></a>
+                <a href="http://twitter.com/@rbaenan" target="_blank"><img src="{{STATIC_URL}}img/twitter-logo.png" alt="logo" /></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{{STATIC_URL}}js/vendor/jquery.js"></script>
+<script src="{{STATIC_URL}}js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</html>
